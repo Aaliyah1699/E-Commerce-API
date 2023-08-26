@@ -23,6 +23,7 @@
         "http-status-codes": "^2.2.0",
         "joi": "^17.9.2",
         "jsonwebtoken": "^9.0.1",
+        "mongodb": "^5.8.1",
         "mongoose": "^7.4.5",
         "morgan": "^1.10.0",
         "req-sanitizer": "^0.2.1",
