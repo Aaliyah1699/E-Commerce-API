@@ -8,6 +8,7 @@ const app = express();
 // packages
 
 // database
+const connectDB = require("./db/connect");
 
 // routers
 
@@ -16,6 +17,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 const start = async () => {
     try {
+        await connectDB(process.env.MONGO_URI);
         app.listen(() => {
             console.log(port, `server listening on port ${port}`);
         });
