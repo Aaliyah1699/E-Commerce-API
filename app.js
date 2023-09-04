@@ -12,6 +12,7 @@ const morgan = require("morgan");
 const connectDB = require("./db/connect");
 
 // routers
+const authRouter = require("./routes/authRoutes");
 
 // middleware
 const notFoundMiddleware = require("./middleware/not-found");
@@ -23,6 +24,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.send("E-commerce API");
 });
+
+app.use("/api/v1/auth", authRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
