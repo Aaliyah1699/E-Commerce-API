@@ -26,6 +26,11 @@ app.use(cookieParser());
 app.get("/", (req, res) => {
     res.send("E-commerce API");
 });
+app.get("/api/v1", (req, res) => {
+    // test cookie
+    console.log(req.cookies);
+    res.send("E-commerce API");
+});
 
 app.use("/api/v1/auth", authRouter);
 
