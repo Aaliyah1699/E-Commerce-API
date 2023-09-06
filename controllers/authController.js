@@ -48,7 +48,12 @@ const login = async (req, res) => {
 };
 
 const logout = async (req, res) => {
-    res.send("logout user");
+    res.cookie("token", "logout", {
+        httpOnly: true,
+        expires: new Date(Date.now()),
+    });
+    // for testing
+    res.status(StatusCodes.OK).json({ mag: "logged out" });
 };
 
 module.exports = { register, login, logout };
