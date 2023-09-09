@@ -4,16 +4,28 @@ const ReviewSchema = mongoose.Schema(
     {
         rating: {
             type: Number,
+            min: 1,
+            max: 5,
+            required: [true, "Please provide rating"],
         },
         title: {
             type: String,
+            required: [true, "Please provide review title"],
+            trim: true,
+            maxLength: 100,
         },
         comment: {
             type: String,
+            required: [true, "Please review text"],
         },
         user: {
-            type: mongoose.Types.ObjectId,
+            type: mongoose.Schema.ObjectId,
             ref: "User",
+            required: true,
+        },
+        product: {
+            type: mongoose.Schema.ObjectId,
+            ref: "Product",
             required: true,
         },
     },
