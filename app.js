@@ -8,6 +8,7 @@ const app = express();
 // packages
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
+const fileUpload = require("express-fileupload");
 const cors = require("cors");
 
 // database
@@ -26,6 +27,7 @@ app.use(morgan("tiny"));
 app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET)); // temp
 app.use(express.static("./public"));
+app.use(fileUpload());
 app.use(cors());
 
 app.get("/", (req, res) => {
