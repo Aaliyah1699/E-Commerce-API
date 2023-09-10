@@ -23,7 +23,7 @@ const ProductSchema = mongoose.Schema(
         },
         image: {
             type: String,
-            default: "/uploads/bedroom.jpg",
+            default: "/uploads/office.jpg",
         },
         category: {
             type: String,
@@ -60,6 +60,10 @@ const ProductSchema = mongoose.Schema(
             type: Number,
             default: 0,
         },
+        numOfReviews: {
+            type: Number,
+            default: 0,
+        },
         user: {
             type: mongoose.Types.ObjectId,
             ref: "User",
@@ -80,7 +84,7 @@ ProductSchema.virtual("reviews", {
     justOne: false,
 });
 
-ProductSchema.pre("remove", async function () {
+ProductSchema.pre("deleteOne", { document: true }, async function (next) {
     await this.model("Review").deleteMany({ product: this._id });
 });
 
