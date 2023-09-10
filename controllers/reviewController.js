@@ -34,7 +34,7 @@ const getAllReviews = async (req, res) => {
 };
 const getSingleReview = async (req, res) => {
     const { id: reviewId } = req.params;
-    const review = Review.findOne({ _id: reviewId });
+    const review = await Review.findOne({ _id: reviewId });
     if (!review) {
         throw new CustomError.NotFoundError(`No review with id: ${reviewId}`);
     }
