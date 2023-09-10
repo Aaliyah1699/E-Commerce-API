@@ -9,18 +9,17 @@ const {
 } = require("../controllers/reviewController");
 const {
     authenticateUser,
-    authorizePermissions,
 } = require("../middleware/authentication");
 
 router
     .route("/")
     .get(getAllReviews)
-    .get(getSingleReview)
-    .post([authenticateUser, authorizePermissions("admin")], createReview);
+    .post(authenticateUser, createReview);
 
 router
     .route("/:id")
-    .patch([authenticateUser, authorizePermissions("admin")], updateReview)
-    .delete([authenticateUser, authorizePermissions("admin")], deleteReview);
+    .get(getSingleReview)
+    .patch(authenticateUser, updateReview)
+    .delete(authenticateUser, deleteReview);
 
 module.exports = router;
