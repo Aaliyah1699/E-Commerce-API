@@ -84,7 +84,7 @@ ProductSchema.virtual("reviews", {
     justOne: false,
 });
 
-ProductSchema.pre("deleteOne", { document: true }, async function (next) {
+ProductSchema.pre("deleteOne", { document: true }, async function () {
     await this.model("Review").deleteMany({ product: this._id });
 });
 
