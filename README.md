@@ -21,6 +21,8 @@ Other security packages
 -   Uses RESTful routes and controllers for CRUD operations.
 -   Implements secure cookies with signed and secure flags.
 -   Provides user authentication and authorization.
+-   Utilizes Mongoose for object modeling.
+-   Includes virtuals, schemas, and the populate method for data manipulation.
 -   Utilizes docgen for generating documentation.
 
 # Features
