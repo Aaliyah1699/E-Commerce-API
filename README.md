@@ -5,14 +5,14 @@ This is a robust and secure backend e-commerce API built using Node.js, Express,
 
 ## Feel free to check out my [Portfolio](https://aaliyahm-portfolio.netlify.app/) 🛍️ ‼️
 
-# Dependencies
+# Technologies Used
 
 Node.js
 Express.js
 MongoDB
 Mongoose
 JWT
-Other security packages
+Postman API
 
 ## Summary
 
