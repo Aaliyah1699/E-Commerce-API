@@ -7,11 +7,11 @@ This is a robust and secure backend e-commerce API built using Node.js, Express,
 
 # Technologies Used
 
-Node.js
-Express.js
-MongoDB
-Mongoose
-JWT
+Node.js,
+Express.js,
+MongoDB,
+Mongoose,
+JWT,
 Postman API
 
 ## Summary
